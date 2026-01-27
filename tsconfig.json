@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowImportingTsExtensions": false, // 关闭此选项
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "allowJs": true,
+    "noEmit": false,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "node_modules/@storybook"],
+    "types": ["node", "vitest", "@storybook/react-vite"] // 补充 vitest 类型
+  },
+  "include": ["src/**/*", "src/**/*.stories.tsx", ".storybook/**/*", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

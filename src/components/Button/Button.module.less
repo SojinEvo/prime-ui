@@ -1,0 +1,50 @@
+.prime-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--loading {
+    opacity: 0.8;
+    cursor: wait;
+  }
+  .prime-button__loading {
+    font-size: 14px;
+    animation: spin 1s linear infinite;
+  }
+
+  &--primary {
+    background-color: #165dff;
+    color: #fff;
+  }
+  &--danger {
+    background-color: #f53f3f;
+    color: #fff;
+  }
+  &--default {
+    background-color: #fff;
+    border: 1px solid #dcdfe6;
+    color: #333;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

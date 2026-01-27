@@ -1,0 +1,15 @@
+# .gitignore
+node_modules/
+dist/
+storybook-static/
+docs-dist/
+node_modules/.tmp/
+*.log
+*.swp
+.DS_Store
+.vscode/
+.idea/
+pnpm-lock.yaml
+coverage/
+stats.html
+*storybook.log

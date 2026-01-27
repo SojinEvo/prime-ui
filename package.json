@@ -1,0 +1,145 @@
+{
+  "name": "prime-ui",
+  "version": "0.1.0",
+  "description": "prime-ui 基于 React 组件库（React + TS）",
+  "type": "module",
+  "main": "dist/prime-ui.cjs.js",
+  "module": "dist/prime-ui.es.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/prime-ui.umd.js",
+  "jsdelivr": "dist/prime-ui.umd.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/prime-ui.es.js",
+      "require": "./dist/prime-ui.cjs.js"
+    },
+    "./style": "./dist/style.css",
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "import": "./dist/*/index.es.js",
+      "require": "./dist/*/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "rollup -c rollup.config.js",
+    "build:types": "tsc --emitDeclarationOnly --declarationDir dist",
+    "build:docs": "storybook build",
+    "build:all": "pnpm run lint:strict && pnpm run test:coverage && pnpm run build && pnpm run build:docs",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "lint:strict": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,md,less}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md,less}\"",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm run build:all && changeset publish",
+    "prepublishOnly": "pnpm run build:all",
+    "clean": "pnpm dlx rimraf@6.1.2 dist docs-dist node_modules/.tmp storybook-static",
+    "prepare": "husky",
+    "storybook": "NODE_OPTIONS='--no-deprecation --trace-warnings' pnpm exec storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0 <19.0.0",
+    "react-dom": ">=18.0.0 <19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "1.18.1",
+    "classnames": "2.5.1",
+    "copy-to-clipboard": "3.3.3",
+    "prop-types": "15.8.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "8.6.15",
+    "@storybook/addon-essentials": "8.6.15",
+    "@storybook/addon-interactions": "8.6.15",
+    "@storybook/addon-onboarding": "8.6.15",
+    "@storybook/blocks": "8.6.15",
+    "@storybook/manager-api": "^8.6.14",
+    "@storybook/react": "8.6.15",
+    "@storybook/react-vite": "8.6.15",
+    "@storybook/test": "8.6.15",
+    "@storybook/theming": "^8.6.14",
+    "@types/less": "^3.0.8",
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.2.1",
+    "husky": "9.1.7",
+    "less": "^4.5.1",
+    "storybook": "8.6.15",
+    "vite": "5.2.11",
+    "vite-plugin-dts": "2.3.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/prime-ui.es.js",
+      "limit": "50 KB",
+      "gzip": true
+    }
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ],
+    "*.less": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@humanwhocodes/config-array": "0.15.0",
+      "glob": "^10.3.10",
+      "inflight": "npm:p-limit@^5.0.0",
+      "stable": "0.1.8"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "antd-like",
+    "typescript",
+    "ui",
+    "prime-ui",
+    "react-components",
+    "storybook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SojinEvo/prime-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SojinEvo/prime-ui/issues"
+  },
+  "homepage": "https://SojinEvo.github.io/prime-ui"
+}
