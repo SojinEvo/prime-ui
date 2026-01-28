@@ -1,0 +1,39 @@
+// 强制显示右侧锚点目录
+.sb-toc {
+  display: block !important;
+  position: fixed !important;
+  top: 80px !important;
+  right: 40px !important;
+  width: 220px !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  z-index: 99 !important;
+}
+
+.sb-toc .toc-heading {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.sb-toc .toc-item {
+  color: #6b7280 !important;
+  padding: 4px 0 !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  &:hover {
+    color: #6366f1 !important;
+  }
+  &.is-active {
+    color: #6366f1 !important;
+    font-weight: 500 !important;
+  }
+}

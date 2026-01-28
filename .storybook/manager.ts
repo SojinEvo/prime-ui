@@ -1,17 +1,29 @@
 import { addons } from '@storybook/manager-api';
-import { create, type ThemeVarsPartial } from '@storybook/theming';
+import { create } from '@storybook/theming';
 
-// 8.x 版本支持的主题配置（仅保留有效属性）
-const themeConfig: ThemeVarsPartial = {
-  base: 'light', // 基础主题：light/dark
-  brandTitle: 'PrimeUI', // 左上角显示的名称（8.x 仍支持）
-  brandUrl: '#', // 点击名称跳转地址（8.x 仍支持）
-  // 可选：自定义 Logo（放入 .storybook/public/logo.svg）
-  // brandImage: '/logo.svg',
-  // 注意：8.x 已移除 brandDescription，配置会报错！
-};
+const primeUiTheme = create({
+  base: 'light',
+  brandTitle: 'PrimeUI',
+  brandUrl: '#',
+  colorPrimary: '#6366f1',
+  colorSecondary: '#4f46e5',
+  appBg: '#ffffff',
+  appContentBg: '#ffffff',
+  appBorderColor: '#e5e7eb',
+  appBorderRadius: 6,
+  textColor: '#1f2937',
+  textInverseColor: '#ffffff',
+  textMutedColor: '#6b7280',
+  fontBase: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+  fontCode: 'monospace',
+});
 
-const primeUiTheme = create(themeConfig);
 addons.setConfig({
   theme: primeUiTheme,
+  sidebar: {
+    showRoots: true,
+    collapsedRoots: [],
+  },
+  panelPosition: 'bottom',
+  enableShortcuts: true,
 });

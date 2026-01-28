@@ -1,15 +1,24 @@
-// 主色调
-@primary-color: #165dff; // 主色（按钮primary类型）
-@danger-color: #f53f3f; // 危险色（按钮danger类型）
-@default-color: #666666; // 默认色（按钮default类型）
+// 全局主渐变：浅蓝→淡紫，从上到下过渡，柔和不刺眼
+@sb-gradient-bg: linear-gradient(to bottom, #f8fbff 0%, #f5f3ff 100%);
+// 顶部导航栏渐变：适配主背景，更浅的蓝紫过渡
+@sb-header-gradient: linear-gradient(to right, #f8fbff, #f6f4ff, #f5f3ff);
 
-// 文本色（补充缺失的 @text-color）
-@text-color: #333333; // 主要文本色（按钮default类型的文字色）
-@text-color-secondary: #666; // 次要文本色（可选）
-@text-color-light: #fff; // 浅色文本（如白色）
+// === 样式变量优化 ===
+@sb-primary-color: #6366f1; // 柔和紫蓝色主色
+@sb-text-color: #1f2937; // 深灰主文本
+@sb-text-light: #6b7280; // 浅灰次文本
+@sb-link-color: #4f46e5; // 链接色（与主色同系）
+@sb-sidebar-bg: #ffffff; // 左侧菜单纯白背景
+@sb-content-bg: #ffffff; // 中间内容区纯白卡片
+@sb-border-color: #e5e7eb; // 边框浅灰
 
-//  边框色（可选，Button中用到了#e5e5e5，可统一变量）
-@border-color-base: #e5e5e5; // 基础边框色
+// === 项目变量 ===
+@primary-color: @sb-primary-color;
+@font-size-base: 14px;
+@spacing-base: 8px;
+@border-radius-base: 6px;
+@bg-color: @sb-gradient-bg; // 全局body背景，关联渐变
 
-// 字体大小
-@font-size-base: 14px; // 基础字体大小
+// === 导入定制样式 ===
+@import 'storybook-docs.less';
+@import 'storybook-toc.less';
